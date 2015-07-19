@@ -1,25 +1,23 @@
 # Ember-cli-dropdown
 
-This README outlines the details of collaborating on this Ember addon.
+Alternative to Ember.Select that ember-cli don't complain about using 'view'.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install ember-cli-dropdown`
 
-## Running
+## Useage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+If you already use [Ember.Select](http://emberjs.com/api/classes/Ember.Select.html) this is a very easy transition. A typical `Ember.Select` is:
 
-## Running Tests
+```
+{{view "select" content=programmers optionValuePath="content.id" optionLabelPath="content.firstName" value=someBindingValue class='some classname'}}
+```
 
-* `ember test`
-* `ember test --server`
+In Ember-Cli-Dropdown:
 
-## Building
+```
+{{drop-down content=programmers value=someBindingValue selectClass="some classname" optionValuePath="value" optionLabelPath="display"}}
+```
 
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+The main changes here is `class` is now `selectClass` and when using `optionValuePath` and `optionLabelPath` you just need to sepicfy the object's property.
