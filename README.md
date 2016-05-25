@@ -21,3 +21,8 @@ In Ember-Cli-Dropdown:
 ```
 
 The main changes here is `class` is now `selectClass` and when using `optionValuePath` and `optionLabelPath` you just need to sepicfy the object's property.
+
+
+## A note on ember data boolean type
+
+From the documentation of ember data. They mention it will convert a string of 'true' or 'false' if you speify the ```attr('boolean')```. This don't seem to be the case for version 2.4.0. To deal with this there is now a extra piece of code if you are using true or false as value of a drop down it will first convert it to boolean before setting the value.
