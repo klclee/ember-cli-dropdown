@@ -17,5 +17,5 @@ export default Ember.Helper.helper(function(params, hash) {
     value = data;
     display = data;
   }
-  return new Em.Handlebars.SafeString(`<option value="${value}">${display}</option>`);
+  return new Em.String.htmlSafe(`<option value="${value}">${display}</option>`);
 });
