@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-dropdown",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Alternative to Ember.Select that ember-cli don't complain about using 'view'",
   "directories": {
     "doc": "doc",
