@@ -1,13 +1,14 @@
-export default Em.Component.extend({
+import Ember from "ember"
+
+export default Ember.Component.extend({
   selectClass: '',
   content: null,
   value: '',
   optionValuePath: '',
   optionLabelPath: '',
-  didInsertElement: function() {
+  initSelect: Ember.on('didInsertElement', function() {
     this.$().find(`option[value='${this.value}']`).prop('selected', true);
-    var _scope = this;
-    this.$().on('change', function() {
+    this.$().on('change', () => {
       var optionValue = false;
       if ($("option:selected", this).val() === 'true') {
         optionValue = $("option:selected", this).val() === 'true';
@@ -16,7 +17,7 @@ export default Em.Component.extend({
       } else {
         optionValue = $("option:selected", this).val();
       }
-      _scope.set('value', optionValue);
+      this.set('value', optionValue);
     });
-  }
+  })
 });
