@@ -1,6 +1,6 @@
 # Ember-cli-dropdown
 
-Alternative to Ember.Select that ember-cli don't complain about using 'view'.
+This addon was created back in the time that ember is deprecating the VIEW class. However this is still valid today as a way to generate a drop down.
 
 ## Installation
 
@@ -8,19 +8,20 @@ Alternative to Ember.Select that ember-cli don't complain about using 'view'.
 
 ## Useage
 
-If you already use [Ember.Select](http://emberjs.com/api/classes/Ember.Select.html) this is a very easy transition. A typical `Ember.Select` is:
 
-```
+~~If you already use [Ember.Select](http://emberjs.com/api/classes/Ember.Select.html) this is a very easy transition. A typical `Ember.Select` is:
+
+~~```
 {{view "select" content=programmers optionValuePath="content.id" optionLabelPath="content.firstName" value=someBindingValue class='some classname'}}
 ```
 
 In Ember-Cli-Dropdown:
 
 ```
-{{drop-down content=programmers value=someBindingValue selectClass="some classname" optionValuePath="value" optionLabelPath="display"}}
+{{drop-down content=programmers value=someBindingValue optionValuePath="value" optionLabelPath="display"}}
 ```
 
-The main changes here is `class` is now `selectClass` and when using `optionValuePath` and `optionLabelPath` you just need to sepicfy the object's property.
+~~The main changes here is when using `optionValuePath` and `optionLabelPath` you just need to specify the object's property.
 
 
 ## A note on ember data boolean type
