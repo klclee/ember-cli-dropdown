@@ -11,10 +11,6 @@ This addon was created back in the time that ember is deprecating the VIEW class
 
 ~~If you already use [Ember.Select](http://emberjs.com/api/classes/Ember.Select.html) this is a very easy transition. A typical `Ember.Select` is:~~
 
-~~```
-{{view "select" content=programmers optionValuePath="content.id" optionLabelPath="content.firstName" value=someBindingValue class='some classname'}}
-```~~
-
 In Ember-Cli-Dropdown:
 
 ```
