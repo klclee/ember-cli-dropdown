@@ -13,7 +13,7 @@ This addon was created back in the time that ember is deprecating the VIEW class
 
 ~~```
 {{view "select" content=programmers optionValuePath="content.id" optionLabelPath="content.firstName" value=someBindingValue class='some classname'}}
-```
+```~~
 
 In Ember-Cli-Dropdown:
 
@@ -21,7 +21,7 @@ In Ember-Cli-Dropdown:
 {{drop-down content=programmers value=someBindingValue optionValuePath="value" optionLabelPath="display"}}
 ```
 
-~~The main changes here is when using `optionValuePath` and `optionLabelPath` you just need to specify the object's property.
+~~The main changes here is when using `optionValuePath` and `optionLabelPath` you just need to specify the object's property.~~
 
 
 ## A note on ember data boolean type
