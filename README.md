@@ -13,8 +13,20 @@ This addon was created back in the time that ember is deprecating the VIEW class
 
 In Ember-Cli-Dropdown:
 
-```
+```hbs
 {{drop-down content=programmers value=someBindingValue optionValuePath="value" optionLabelPath="display"}}
+```
+
+The values of the `optionValuePath` and `optionLabelPath` need to map to the object properties of the `content` array. `content` needs to be an array of objects or it can be a array of `Ember.Object`, either in your component or controller:
+
+```js
+contentArray: [ {value: 'open', display: 'Open'}, {value:'closed', display:'Closed'}, {value:'waiting', display:'Waiting'}]
+```
+
+then in your hbs:
+
+```hbs
+{{drop-down content=contentArray value=ticket.status optionValuePath="value" optionLabelPath="display"}}
 ```
 
 ~~The main changes here is when using `optionValuePath` and `optionLabelPath` you just need to specify the object's property.~~
