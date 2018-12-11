@@ -7,7 +7,11 @@ export default Ember.Component.extend({
   optionValuePath: '',
   optionLabelPath: '',
   checkValueChange: Ember.observer('value', function(){
-    this.$().find(`option[value='${this.value}']`).prop('selected', true);
+    if (Ember.isBlank(this.value)) {
+      this.$("option[value='']").prop('selected', true);
+    } else {
+      this.$(`option[value='${this.value}']`).prop('selected', true);
+    }
   }),
   initSelect: Ember.on('didInsertElement', function() {
     this.$().find(`option[value='${this.value}']`).prop('selected', true);
