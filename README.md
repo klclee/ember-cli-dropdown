@@ -32,6 +32,16 @@ then in your hbs:
 ~~The main changes here is when using `optionValuePath` and `optionLabelPath` you just need to specify the object's property.~~
 
 
+## Adding a disabled `option`
+
+You can add a preselected state in the dropdown. To do this use this set the option `disableOption` to `true` and you can customise the text by using `disableOptionText` option.
+
+Example:
+
+```js
+{{drop-down content=contentArray value=ticket.status optionValuePath="value" optionLabelPath="display" disableOption=true disableOptionText="Some text"}}
+```
+
 ## A note on ember data boolean type
 
 From the documentation of ember data. They mention it will convert a string of 'true' or 'false' if you speify the ```attr('boolean')```. This don't seem to be the case for version 2.4.0. To deal with this there is now a extra piece of code if you are using true or false as value of a drop down it will first convert it to boolean before setting the value.

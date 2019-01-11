@@ -6,11 +6,22 @@ export default Ember.Component.extend({
   value: '',
   optionValuePath: '',
   optionLabelPath: '',
+  disableOption: false,
+  disableOptionText: "Please Select",
   checkValueChange: Ember.observer('value', function(){
     if (Ember.isBlank(this.value)) {
       this.$("option[value='']").prop('selected', true);
     } else {
       this.$(`option[value='${this.value}']`).prop('selected', true);
+    }
+  }),
+  generateDisableOption: Ember.computed('disableOption', 'value', function(){
+    if(this.disableOption === true && Ember.isBlank(this.value)){
+      return Ember.String.htmlSafe(`<option selected="true" disabled="disabled">${this.disableOptionText}</option>`);
+    }else if (this.disableOption === true && !Ember.isBlank(this.value)){
+      return Ember.String.htmlSafe(`<option disabled="disabled">${this.disableOptionText}</option>`);
+    }else{
+      return ""
     }
   }),
   initSelect: Ember.on('didInsertElement', function() {
