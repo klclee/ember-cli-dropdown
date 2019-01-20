@@ -17,5 +17,6 @@ export default Ember.Helper.helper(function(params, hash) {
     value = data;
     display = data;
   }
-  return Ember.String.htmlSafe(`<option value="${value}">${display}</option>`);
+  const wrappedValue = (value === undefined || value === null || value === true || value === false) ? `${value}` : `"${value}"`;
+  return Ember.String.htmlSafe(`<option value=${wrappedValue}>${display}</option>`);
 });
